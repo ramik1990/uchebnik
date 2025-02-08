@@ -1,7 +1,7 @@
 <template>
     <nav>
-        
         <router-link to="/" :class="{ active: currentRoute === '/' }">Главная страница</router-link>
+        <router-link to="/content" :class="{ active: currentRoute === '/content' }">Содержание</router-link>
         <router-link to="/about" :class="{ active: currentRoute === '/about' }">О нас</router-link>
     </nav>
 </template>
