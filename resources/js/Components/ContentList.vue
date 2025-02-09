@@ -2,7 +2,7 @@
     <section class="ContentList" v-if="content">
         <h1 align="center">Оглавление</h1>
         <ul>
-            <li v-for="(val, index) in content" :key="index"> <deletebutton :id="val" /> <buttoncontent :value="val"/> </li>
+            <li v-for="(val, index) in content" :key="index"> <deletebutton :id="val" v-if="checkAuth"/> <buttoncontent :value="val"/> </li>
         </ul>
     </section>
     <h2 align="center" v-else> загрузка... </h2>
@@ -29,11 +29,20 @@ export default {
             axios.get('/api/getContent').then(response => {
                 this.content = response.data;
             });
-        }
+        },
     },
     created() {
         this.getContent();
     },
+    computed: {        
+        checkAuth() {
+            if(localStorage.getItem('token')) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+    }
 }
 </script>
 
