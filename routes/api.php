@@ -22,8 +22,11 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('/getSettings', [SettingController::class, 'getSettings']);
+Route::post('/editSettings', [SettingController::class, 'editSettings']);
 Route::get('/getContent', [ContentController::class, 'getContent']);
 Route::get('/getContent/{id}', [ContentController::class, 'getContentOne']);
+Route::get('/delete/{id}', [ContentController::class, 'deleteContentOne']);
+Route::post('/addContent', [ContentController::class, 'addContent']);
 
 //=================AuthController=======================================
 Route::post('/login', [AuthController::class, 'login']);

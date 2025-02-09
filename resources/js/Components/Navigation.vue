@@ -3,6 +3,7 @@
         <router-link to="/" :class="{ active: currentRoute === '/' }">Главная страница</router-link>
         <router-link to="/content" :class="{ active: currentRoute === '/content' }">Содержание</router-link>
         <router-link to="/about" :class="{ active: currentRoute === '/about' }">О нас</router-link>
+        <router-link to="/dashboard" class="dashboard" :class="{ active: currentRoute === '/dashboard' }">💼</router-link>
     </nav>
 </template>
 
@@ -51,7 +52,17 @@ nav a:hover {
     transition: all .2s linear;
 }
 .active {
-    background-color: rgb(252, 252, 252);
+    background-color: rgb(252, 252, 252) !important;
     color: rgb(43, 43, 43);
+}
+.dashboard {
+    background-color: #00A6ED;
+    font-size: 24px;
+    max-width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
 }
 </style>

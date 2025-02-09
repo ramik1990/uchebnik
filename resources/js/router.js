@@ -6,6 +6,8 @@ import FullContent from "./Components/FullContent.vue";
 import Login from './Components/Login.vue';
 import Register from './Components/Register.vue';
 import Dashboard from './Components/Dashboard.vue';
+import editSettings from "./Components/admin/editSettings.vue";
+import addContent from "./Components/admin/addContent.vue";
 
 const routes = [
     {path: '/', component: Home},
@@ -15,6 +17,8 @@ const routes = [
     {path: '/login', component: Login},
     {path: '/register', component: Register},
     {path: '/dashboard', component: Dashboard, meta: { requiresAuth: true }},
+    {path: '/editSettings', component: editSettings, meta: { requiresAuth: true }},
+    {path: '/addContent', component: addContent, meta: { requiresAuth: true }},
 ];
 
 const router = createRouter({

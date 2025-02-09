@@ -2,7 +2,7 @@
     <section class="ContentList" v-if="content">
         <h1 align="center">Оглавление</h1>
         <ul>
-            <li v-for="(val, index) in content" :key="index"> <buttoncontent :value="val"/> </li>
+            <li v-for="(val, index) in content" :key="index"> <deletebutton :id="val" /> <buttoncontent :value="val"/> </li>
         </ul>
     </section>
     <h2 align="center" v-else> загрузка... </h2>
@@ -11,11 +11,13 @@
 <script>
 import axios from 'axios';
 import ButtonContent from './ButtonContent.vue';
+import deleteButton from './admin/deleteButton.vue';
 
 export default {
     name: "ContentList",
     components: {
-        'buttoncontent' : ButtonContent
+        'buttoncontent' : ButtonContent,
+        'deletebutton' : deleteButton
     },
     data() {
         return {
@@ -36,5 +38,7 @@ export default {
 </script>
 
 <style scoped>
-
+ul {
+   list-style: none ; 
+}
 </style>
