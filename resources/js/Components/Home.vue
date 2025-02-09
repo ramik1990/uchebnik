@@ -6,6 +6,7 @@
         <p>{{ settings.description }}</p>
         <span>Автор: {{ settings.autor }}</span>
     </section>
+    <h2 v-else align="center"> загрузка... </h2>
 </template>
 
 <script>
@@ -21,7 +22,6 @@ export default {
     methods: {
         getSettings() {
             axios.get('/api/getSettings').then( response => {
-                console.log(response.data);
                 this.settings = response.data;
             });
         }
